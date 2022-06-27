@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ReactPaginate from "react-paginate";
-import Footer from "./Footer";
+import pokeball from '../pokeball.svg'
 import List from "./List";
 
 
@@ -28,7 +28,6 @@ function PaginatedList(_props:any) {
 
     return (
         <>
-        
             <div className="container">
                 <List currentItems={currentItems}
                     list={_props.list}
@@ -43,7 +42,7 @@ function PaginatedList(_props:any) {
                     previousLinkClassName="page-link"
                     nextClassName="page-item"
                     nextLinkClassName="page-link"
-                    breakLabel="..."
+                    breakLabel={<img className='pokeball' src={pokeball}/>}
                     breakClassName="page-item"
                     breakLinkClassName="page-link"
                     containerClassName="center"
@@ -55,7 +54,6 @@ function PaginatedList(_props:any) {
                     pageCount={pageCount}
                 />
                 </div>
-                <Footer />
         </>
     )
 }  
