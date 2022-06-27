@@ -1,6 +1,6 @@
 import React, { useState, useEffect, Fragment } from 'react';
 import axios from 'axios';
-import { BASE_URL, ALL_GENS_POKEMON_ENDPOINT, POKEMON_DETAIL_URL, IMAGE_URL } from '../api/CONSTANTS'
+import { BASE_URL, ALL_GENS_POKEMON_ENDPOINT } from '../api/CONSTANTS'
 import Pokemon from '../models/Pokemon'
 import Navbar from './Navbar';
 
@@ -10,7 +10,7 @@ function Home(){
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const listResponse = await axios.get(BASE_URL+ALL_GENS_POKEMON_ENDPOINT+"?limit=10");
+                const listResponse = await axios.get(BASE_URL+ALL_GENS_POKEMON_ENDPOINT+"?limit=10000");
                 setList(listResponse.data.results);
             } catch (err) {
                 console.error(err);

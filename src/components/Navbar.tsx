@@ -1,5 +1,4 @@
 import React, { Fragment, useState } from 'react';
-import List from './List';
 import pokeball from '../pokeball.svg'
 import PaginatedList from './PaginatedList';
 
@@ -19,7 +18,6 @@ function Navbar(_props:any){
                 <a href="#about">About</a>
                 <a href="#contact">Contact</a>
                 <div className="searchBox">
-
                 <input onChange={inputHandler} className="searchInput" type="text" name="" placeholder="Search"/>
                 <button className="searchButton">
                     <img className="pokeball" src={pokeball}/>
@@ -27,9 +25,9 @@ function Navbar(_props:any){
         </div>
             </div>
             
-            <div className='container'>
-                <PaginatedList itemsPerPage={6} list={_props.list} search={inputText}/>
-            </div>
+            
+        <PaginatedList itemsPerPage={6} list={_props.list} search={inputText}/>
+            
         </Fragment>
     )
 }

@@ -1,3 +1,8 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 /* BODY */
 body {
   scroll-behavior: smooth;
@@ -99,10 +104,11 @@ body {
   gap: .1rem .1rem;
   grid-template-columns: auto auto auto;
   padding: .2rem;
+  margin-top: 3rem;
 }
 
 .detail-img {
-  height: 12rem;
+  height: 10rem;
   margin-top: 1.5rem;
 }
 
@@ -133,18 +139,57 @@ body {
   border: solid .4rem black;
 }
 
-/* PAGINATION */
-.pagination {
-  display: inline-block;
-  position: absolute;
-  top: 100%;
-  left: 35%;
+
+/* FOOTER & PAGINATION */
+.center {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 1.3rem;
 }
 
+#footer{
+  position: fixed;
+  padding: 10px 10px 0px 10px;
+  bottom: 0;
+  width: 100%;
+  padding: 0.5rem;
+  color: white;
+  background: linear-gradient(to right, red,rgb(214, 66, 66));
+}
+
+#secondary-footer{
+  position: fixed;
+  padding: 10px 10px 0px 10px;
+  bottom: 0;
+  width: 100%;
+  margin-bottom: 3.5rem;
+}
+
+/* PAGINATION */
+
 .page-item {
-  color: black;
-  float: left;
-  padding: 8px 16px;
+  margin: 0 1rem;
   text-decoration: none;
   list-style: none;
+  color: black;
+}
+
+.active{
+  background-color: red;
+  color: white;
+}
+
+.page-link{
+  padding: 1rem 1rem;
+  text-decoration: none;
+  font-weight: 900;
+  background:
+    linear-gradient(red 0 0) top    /100% var(--d, 0%) no-repeat;
+}
+
+.page-link:hover{
+  background: red;
+  color: white;
+  border: .1rem solid black;
 }
