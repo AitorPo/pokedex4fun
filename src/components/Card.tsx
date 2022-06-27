@@ -40,8 +40,8 @@ function Card(_props: any){
 
     return isBusy ? <Spinner color={"red"} override={override} size={200} /> : 
     (<div className="pkmn-card">
-        <img className="detail-img" src={`${image}`} />
-        <Link style={{textDecoration: 'none'}} to={`/pokemon/${_props.name}`} state={{ pokemonName: `${_props.name}`, pokemonImage: `${_props.image}` }}>
+        <img className="card-img" src={`${image}`} />
+        <Link style={{textDecoration: 'none'}} to={`/pokemon/${_props.queryName}`} state={{ pokemonName: `${_props.queryName}`, pokemonImage: `${_props.image}` }}>
             <p className="card-text">{_props.name}</p>
         </Link>
     </div>

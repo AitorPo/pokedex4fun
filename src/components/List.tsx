@@ -42,6 +42,7 @@ function List(_props:any){
                 key={pokemon.name}
                 id={id}
                 name={pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}
+                queryName={pokemon.name}
                 image={`${IMAGE_URL}${id}.png`}
                 />
             );

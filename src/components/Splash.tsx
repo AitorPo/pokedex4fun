@@ -1,8 +1,18 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 
-function Splash(){
+function Splash(_props:any){
 
+    function setCookie(cname:string, cvalue:any, exseconds:number) {
+        const d = new Date();
+        d.setTime(d.getTime() + (exseconds * 1000));
+        let expires = "expires="+d.toUTCString();
+        document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+      }
+
+      useEffect(() => {
+        setCookie("splash", _props.cookie, 60)
+      })
     return (
         <>
         <div className="splash">

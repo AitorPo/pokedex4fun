@@ -5,6 +5,7 @@ class Pokemon {
     name!: string;
     url!: string;
     image!: string;
+    stats!: [];
 
     constructor(name:string, image:string){
         this.name=name;

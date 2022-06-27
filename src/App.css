@@ -199,7 +199,7 @@ body {
   margin-top: 3rem;
 }
 
-.detail-img {
+.card-img {
   height: 10rem;
   margin-top: 1.5rem;
 }
@@ -230,7 +230,6 @@ body {
   --d: 50%;
   border: solid .4rem black;
 }
-
 
 /* FOOTER & PAGINATION */
 .center {
@@ -284,4 +283,18 @@ body {
   background: red;
   color: white;
   border: .1rem solid black;
+}
+
+/* DETAIL */
+.detail{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 1.3rem;
+  border: 1px solid black;
+  height: 100%;
+}
+
+.detail-img{
+  height: 25rem;
 }
