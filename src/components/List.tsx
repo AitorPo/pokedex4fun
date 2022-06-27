@@ -5,15 +5,20 @@ import Card from "./Card";
 
 
 function List(_props:any){
-    const filteredData = _props.list.filter((el: Pokemon) => {
-        if (_props.search === ''){
+    let filteredData:any = []
+    
+    if(_props.search === ''){
+        filteredData = _props.currentItems.filter((el: any) => {
             return el;
-        }
+        });
+    } else{
+        filteredData = _props.list.filter((el:any) => {
+            return el.name.toLowerCase().includes(_props.search)
+        });
+    }
 
-        return el.name.toLowerCase().includes(_props.search)
-    });
     return (
-        filteredData.map((pokemon: Pokemon) => {
+        filteredData.map((pokemon: any) => {
             let id = pokemon.url.split('/')[pokemon.url.split('/').length-2]
             return (
                 <Card 
@@ -26,6 +31,5 @@ function List(_props:any){
         })
     )
 }
-
 
 export default List;

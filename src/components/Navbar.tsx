@@ -1,6 +1,7 @@
 import React, { Fragment, useState } from 'react';
 import List from './List';
 import pokeball from '../pokeball.svg'
+import PaginatedList from './PaginatedList';
 
 
 function Navbar(_props:any){
@@ -10,7 +11,7 @@ function Navbar(_props:any){
         var search = e.target.value.toLowerCase();
         setInputText(search)
     }
-
+    console.log(_props.list)
     return(
         <Fragment>
             <div className='navbar'>
@@ -27,8 +28,7 @@ function Navbar(_props:any){
             </div>
             
             <div className='container'>
-                <List list={_props.list}
-                      search={inputText}/>
+                <PaginatedList itemsPerPage={6} list={_props.list} search={inputText}/>
             </div>
         </Fragment>
     )

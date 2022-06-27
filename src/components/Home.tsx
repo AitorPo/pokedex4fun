@@ -4,11 +4,9 @@ import { BASE_URL, ALL_GENS_POKEMON_ENDPOINT, POKEMON_DETAIL_URL, IMAGE_URL } fr
 import Pokemon from '../models/Pokemon'
 import Navbar from './Navbar';
 
-
 function Home(){
-    
     const [list, setList] = useState<Pokemon[]>([]);
-
+    
     useEffect(() => {
         const fetchData = async () => {
             try {
@@ -20,7 +18,7 @@ function Home(){
         };
         fetchData();
     }, []);
-        
+    
     return (
         <Fragment>
             <Navbar list={list}/>
