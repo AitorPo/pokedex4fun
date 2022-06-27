@@ -23,6 +23,8 @@ function Detail(_props: any){
         borderRadius: "4rem"
       };
 
+    
+
     useEffect(() => {
         const fetchImage = async () => {
             try {
@@ -46,45 +48,58 @@ function Detail(_props: any){
 
     console.log(pokemon)
     return isBusy ? <Spinner color={"red"} override={override} size={200} /> : (
+        <>
+            
         <div className='detail'>
-            <p>{pokemonName}</p>
+            
+        <div className='detail-info'>
+            <p className='pkmn-name'>{pokemon.name}</p>
             <div className='detail-img-container'>
                 <img className="detail-img" src={`${image}`} />
             </div>
-            <div className='detail-info'>
-                <p>{pokemon.id}</p>
-                <p>{pokemon.name}</p>
-                <p>{pokemon.base_experience}</p>
-                <p>{pokemon.height}</p>
-                <p>{pokemon.weight}</p>
-                {
-                    pokemon.types.map((type:any)=> {
-                        return (
-                            <div className='detail-abilities'>
-                                <p>{type.type.name}</p>
-                            </div>)
-                    })
-                }
+            <div className='basic-info'>
+                <small>Base experience<br/><p>{pokemon.base_experience}</p></small>
+                <small>Height<br/><p>{pokemon.height}</p></small>
+                <small>Weight <br/><p>{pokemon.weight}</p></small>
+            </div>
+                <div className='detail-types'>
+                    {
+                        pokemon.types.map((type:any)=> {
+                            return (
+                                type.slot == 1 ?
+                                    <p className='type'>{type.type.name}</p>
+                                    : (<p className='second-type'><small>{type.type.name}</small></p> )
+                                )
+                        })
+                    }
+                </div>
+                <div className='detail-abilities'>
                 {
                     pokemon.abilities.map((ability:any) => {
                         return (
-                            <div className='detail-abilities'>
+                            <div className='ability'>
                                 <p>{ability.ability.name}</p>
-                                <p>{ability.is_hidden ? "True" : "False"}</p>
-                            </div>)
+                                <p className='hidden-ability'>{ability.is_hidden ? <small>Hidden</small> : ""}</p>
+                            </div>
+                            )
                     })
                 }
+                </div>
+                <div className='detail-stats'>
                 {
                     pokemon.stats.map((stat:any) => {
                         return (
-                        <div className='detail-stats'>
+                        <div className='stat'>
                             <p>{stat.stat.name}</p>
-                            <p>{stat.base_stat}</p>
+                            <div className="status-bar" style={{width:`${stat.base_stat}%`}}></div>
+                            <p className='stat-value'>{stat.base_stat}</p>
                         </div>)
                     })
                 }
+                </div>
             </div>
         </div>
+        </>
     )
 }
 

@@ -5,7 +5,7 @@
 
 /* BODY */
 body {
-  scroll-behavior: smooth;
+  height: 100vh;
 }
 
 /* SPLASHSCREEN */
@@ -196,7 +196,7 @@ body {
   gap: .1rem .1rem;
   grid-template-columns: auto auto auto;
   padding: .2rem;
-  margin-top: 3rem;
+  margin-top: 1rem;
 }
 
 .card-img {
@@ -287,14 +287,110 @@ body {
 
 /* DETAIL */
 .detail{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  margin-top: 1.3rem;
-  border: 1px solid black;
+  font-family: arial;
+  font-size: 1rem;
+  margin: 3rem;
+  width: 95%;
   height: 100%;
+  /* Setup */
+  position: relative;
 }
 
 .detail-img{
-  height: 25rem;
+  margin-right: 2rem;
+  margin-left: -6rem;
 }
+
+.detail > div{
+  display: flex;
+  justify-content: space-around;
+}
+
+.basic-info{
+  display: flex;
+  margin-top: 12rem;
+  margin-right: 1rem;
+  margin-bottom: 8rem;
+}
+
+.basic-info > small{
+  text-transform: capitalize;
+  margin-right: 2rem;
+  font-size: x-large;
+  color: red;
+  cursor: pointer;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.basic-info > small > p{
+  color: black;
+}
+
+.detail-info{
+  font-family: arial;
+  font-size: 1rem;
+  width: 98%;
+  height: 100%;
+  /* Setup */
+  position: relative;
+}
+
+.detail-info > div{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.detail-types,
+.detail-abilities{
+  display: flex;
+  padding-right: 3rem;
+  margin-top: 12rem;
+  text-transform: capitalize;
+  font-size: x-large;
+  color: red;
+  height: 100%;
+  cursor: pointer;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.detail-abilities > div{
+  margin-bottom: 2rem;
+}
+
+.pkmn-name{
+  text-transform: capitalize;
+  padding: .1rem;
+  font-size: x-large;
+  color: red;
+  height: 100%;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.hidden-ability,
+.second-type
+{
+  font-size: large;
+  color: black;
+}
+
+.detail-stats{
+  text-transform: capitalize;
+  margin-right: 3rem;
+  font-size: x-large;
+  color: red;
+  cursor: pointer;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.stat-value{
+  color: black;
+}
+
+.status-bar{
+  background: green;
+  height: .3rem;
+  border-radius: 1rem;
+}
+
+

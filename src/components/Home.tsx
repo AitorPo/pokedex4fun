@@ -51,7 +51,7 @@ function Home(){
                     setIsBusy(false);
                 } else {
                     setTimeout(() => {
-                        setWithExpiry("splash", "splash", 24*60*10);
+                        setWithExpiry("splash", "splash", 60*60*20);
                         setIsBusy(false);
                     }, 8200)
                 }

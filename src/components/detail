@@ -1,0 +1,43 @@
+ <div className='detail-info'>
+            <p className='pkmn-name'>{pokemon.name}</p>
+            <div className='detail-img-container'>
+                <img className="detail-img" src={`${image}`} />
+            </div>
+                <p>{pokemon.base_experience}</p>
+                <p>{pokemon.height}</p>
+                <p>{pokemon.weight}</p>
+                <div className='detail-types'>
+                    {
+                        pokemon.types.map((type:any)=> {
+                            return (
+                                
+                                    <p>{type.type.name}</p>
+
+                                )
+                        })
+                    }
+                </div>
+                <div className='detail-abilities'>
+                {
+                    pokemon.abilities.map((ability:any) => {
+                        return (
+                            <div className='ability'>
+                                <p>{ability.ability.name}</p>
+                                <p>{ability.is_hidden ? "True" : "False"}</p>
+                            </div>
+                            )
+                    })
+                }
+                </div>
+                <div className='detail-stats'>
+                {
+                    pokemon.stats.map((stat:any) => {
+                        return (
+                        <div className='stat'>
+                            <p>{stat.stat.name}</p>
+                            <p>{stat.base_stat}</p>
+                        </div>)
+                    })
+                }
+                </div>
+            </div>
